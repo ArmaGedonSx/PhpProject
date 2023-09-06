@@ -1,19 +1,35 @@
 
+
+/* Table styles */
 table {
+    /* Make the table full width */
     width: 100%;
+
+    /* Collapse borders so that there is no space between cells */
     border-collapse: collapse;
-  }
+}
 
 th, td {
+    /* Add a border to each cell */
     border: 1px solid black;
+
+    /* Add some padding to each cell */
     padding: 5px;
-    text-align: center;
-}
-  
-th {
+
+    /* Center the text in each cell */
     text-align: center;
 }
 
-h1{
+
+th {
+    /* Make the header text bold */
+    font-weight: bold;
+
+    /* Center the header text */
+    text-align: center;
+}
+
+h1 {
+    /* Center the heading text */
     text-align: center;
 }

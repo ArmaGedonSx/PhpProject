@@ -1,12 +1,15 @@
 <?php
 // views/ad-list.php
 
+// Including the AdvertisementService and UserService files
 include '../services/AdvertisementService.php';
 include '../services/UserService.php';
 
+// Creating an instance of the AdvertisementService and retrieving the advertisements
 $adModel = new AdvertisementService();
 $ads = $adModel->getAdvertisements();
 
+// Creating an instance of the UserService and retrieving the users
 $userModel = new UserService();
 $users = $userModel->getUsers();
 ?>
@@ -42,6 +45,7 @@ $users = $userModel->getUsers();
                     <td><?= $ad['userid'] ?></td>
                     <td>
                         <?php
+                        // Looping through the users to find the user with matching ID
                         foreach ($users as $user) {
                             if ($user['id'] == $ad['userid']) {
                                 echo $user['name'];

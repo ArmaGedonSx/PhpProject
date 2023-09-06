@@ -1,8 +1,10 @@
 <?php
 // views/user-list.php
 
+// Including the UserService file
 include '../services/UserService.php';
 
+// Creating an instance of the UserService and retrieving the users
 $userModel = new UserService();
 $users = $userModel->getUsers();
 ?>
@@ -17,26 +19,26 @@ $users = $userModel->getUsers();
     <link rel="stylesheet" type="text/css" href="<?php realpath($_SERVER["DOCUMENT_ROOT"]);?>/Rabit/css/style.css" />
 </head>
 
-<h1>User List</h1>
-
 <body>
-<table>
-    <a href="index.php"> Back </a>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($users as $user) : ?>
+    <h1>User List</h1>
+
+    <table>
+        <a href="index.php"> Back </a>
+        <thead>
             <tr>
-                <td><?= $user['id'] ?></td>
-                <td><?= $user['name'] ?></td>
+                <th>ID</th>
+                <th>Name</th>
             </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <?php foreach ($users as $user) : ?>
+                <tr>
+                    <td><?= $user['id'] ?></td>
+                    <td><?= $user['name'] ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 </body>
 
 </html>
